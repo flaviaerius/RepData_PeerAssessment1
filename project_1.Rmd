@@ -9,7 +9,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, fig.path = "figures/")
 ```
 
 This is a document describing analysis of data obtained from a personal activity monitoring device. The device collects steps taken from the user in 5 minute intervals. The data is labeled per day.

@@ -10,8 +10,9 @@ file extracted from the .zip document.
     unzip("activity_monitor.zip")
     list.files()
 
-    ## [1] "activity_monitor.zip" "activity.csv"         "project_1.html"      
-    ## [4] "project_1.Rmd"        "side_script_draft.R"
+    ## [1] "activity_monitor.zip" "activity.csv"         "figures"             
+    ## [4] "project_1.html"       "project_1.md"         "project_1.Rmd"       
+    ## [7] "README.md"
 
 We could see that the name of the file is “activity.csv”. By knowing the
 extension, we can pick the correct function in R to read it in, and then
@@ -114,7 +115,7 @@ are being used.
     hist(per_day_table$total_steps, breaks = 15, las = 1, xlab = "number of steps",
          main = "Frequency of steps taken per day")
 
-![](project_1_files/figure-markdown_strict/average-1.png)
+![](figures/average-1.png)
 
     average_per_day <- mean(per_day_table$total_steps)
     paste0("The average number of steps per day is ", round(average_per_day), ".")
@@ -202,7 +203,7 @@ Now we can plot the time series plot for average steps accordingly.
     axis(at = xticks, side = 1)
     abline(v = per_interval_table[which.max(per_interval_table$average_across_days), "proper_minutes"]/60, col = "red")
 
-![](project_1_files/figure-markdown_strict/average%20daily%20steps-1.png)
+![](figures/average%20daily%20steps-1.png)
 
 Great! By the plot we can see that around 8:45h in the morning is the
 time of the day with more steps activity for the user we are analyzing.
@@ -325,7 +326,7 @@ no missing values.
     hist(per_day_imputed$total_steps, breaks = 15, las = 1, xlab = "steps",
          main = "Total number of steps taken per day")
 
-![](project_1_files/figure-markdown_strict/histogram%20imputed-1.png)
+![](figures/histogram%20imputed-1.png)
 
 The histogram looks a different from before imputing values, since the
 dates with missing values were accounted as zero steps, what does not
@@ -372,7 +373,7 @@ the data with the imputed values.
     ggplot(per_interval_weekday, aes(proper_minutes/60, total_steps)) + geom_line() +
           facet_grid(rows = vars(week_or_weekend))
 
-![](project_1_files/figure-markdown_strict/weekdays-1.png)
+![](figures/weekdays-1.png)
 
 It is possible to see that during weekends there is a considerable
 decrease in the number of steps taken in the morning, and an increase in
