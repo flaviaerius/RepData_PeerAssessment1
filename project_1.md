@@ -122,6 +122,11 @@ are being used.
 
     ## [1] "The average number of steps per day is 9354."
 
+    median_per_day <- median(per_day_table$total_steps)
+    paste0("The median number of steps per day is ", round(median_per_day), ".")
+
+    ## [1] "The median number of steps per day is 10395."
+
 ### What is the average daily activity pattern?
 
 To answer this question it is needed to show a time series plot with the

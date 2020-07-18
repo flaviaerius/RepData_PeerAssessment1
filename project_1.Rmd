@@ -61,6 +61,9 @@ hist(per_day_table$total_steps, breaks = 15, las = 1, xlab = "number of steps",
 
 average_per_day <- mean(per_day_table$total_steps)
 paste0("The average number of steps per day is ", round(average_per_day), ".")
+
+median_per_day <- median(per_day_table$total_steps)
+paste0("The median number of steps per day is ", round(median_per_day), ".")
 ```
 
 ### What is the average daily activity pattern?
